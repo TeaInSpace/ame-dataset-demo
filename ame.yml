@@ -1,0 +1,9 @@
+projectid: datasetdemo
+dataSets:
+  - name: dataset1 
+    path: data
+    task:
+        name: dataset1_fetcher
+        projectid: azure_blob_storage 
+        runcommand: python produce_data.py
+
