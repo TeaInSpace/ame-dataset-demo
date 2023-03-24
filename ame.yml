@@ -11,6 +11,8 @@ dataSets:
             value: play.min.io 
           - name: S3_ACCESS_KEY
             value: Q3AM3UQ867SPQQA43P2F
+          - name: S3_OBJECT
+            value: mixed_0101_gradual.csv
         secrets:
           - !AmeSecret
             name: s3secretkey
