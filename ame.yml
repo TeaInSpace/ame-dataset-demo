@@ -6,4 +6,13 @@ dataSets:
         name: dataset1_fetcher
         projectid: azure_blob_storage 
         runcommand: python produce_data.py
+        env:
+          - name: S3_ENDPOINT
+            value: play.min.io 
+          - name: S3_ACCESS_KEY
+            value: Q3AM3UQ867SPQQA43P2F
+        secrets:
+          - !AmeSecret
+            name: s3secretkey
+            envkey: S3_SECRET_KEY
 
