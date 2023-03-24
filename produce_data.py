@@ -16,5 +16,5 @@ print("object: ", object_key)
 
 os.makedirs("data", exist_ok=True)
 
-client.fget_object("amedemo", "mixed_0101_gradual.csv", "data/mixed_0101_gradual.csv")
+client.fget_object("amedemo", object_key, "data/mixed_0101_gradual.csv")
 
