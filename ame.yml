@@ -4,7 +4,7 @@ dataSets:
     path: data
     task:
         name: dataset1_fetcher
-        projectid: azure_blob_storage 
+        projectid: datasetdemo
         runcommand: python produce_data.py
         env:
           - name: S3_ENDPOINT
