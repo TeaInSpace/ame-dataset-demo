@@ -1,4 +1,4 @@
-projectid: datasetdemo
+name: datasetdemo
 dataSets:
   - name: dataset1 
     path: data
