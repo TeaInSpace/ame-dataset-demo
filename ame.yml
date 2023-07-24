@@ -1,16 +1,39 @@
 name: datasetdemo
+models:
+  - name: logreg
+    type: mlflow
+    validationTask:
+      taskRef: 
+        name: mlflow_validation
+    training: 
+      task:
+        taskRef: 
+          name: training
+       #schedule: * * 12 *
+    deployment:
+      auto_train: true
+      deploy: true
+      enable_tls: false
+
+tasks:
+  - name: training
+    projectid: sklearn_logistic_regression
+    templateRef: shared-templates.logistic_reg_template
+    executor:
+      !mlflow
+    dataSets: [dataset1]
+
 dataSets:
   - name: dataset1 
     path: data
     task:
         name: dataset1_fetcher
-        projectid: datasetdemo
-        runcommand: python produce_data.py
+        executor:
+          !pipEnv
+          command: python produce_data.py
         env:
           - name: S3_ENDPOINT
             value: play.min.io 
-          - name: S3_ACCESS_KEY
-            value: Q3AM3UQ867SPQQA43P2F
           - name: S3_OBJECT
             value: mixed_0101_gradual.csv
         secrets:
