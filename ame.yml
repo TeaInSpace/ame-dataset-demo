@@ -28,6 +28,8 @@ dataSets:
     path: data
     task:
         name: dataset1_fetcher
+        artifactCfg:
+          saveChangedFiles: true
         executor:
           !pipEnv
           command: python produce_data.py
