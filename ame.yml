@@ -33,13 +33,13 @@ dataSets:
         executor:
           !pipEnv
           command: python produce_data.py
-        env:
-          - name: S3_ENDPOINT
-            value: play.min.io 
-          - name: S3_OBJECT
-            value: mixed_0101_gradual.csv
-        secrets:
-          - !AmeSecret
-            name: s3secretkey
-            envkey: S3_SECRET_KEY
+        # env:
+        #   - name: S3_ENDPOINT
+        #     value: play.min.io 
+        #   - name: S3_OBJECT
+        #     value: mixed_0101_gradual.csv
+        # secrets:
+        #   - !AmeSecret
+        #     name: s3secretkey
+        #     envkey: S3_SECRET_KEY
 
